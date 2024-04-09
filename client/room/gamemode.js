@@ -37,12 +37,12 @@ API.Build.GetContext().CollapseChangeEnable.Value = true;
 API.Build.GetContext().FlyEnable.Value = true;
 
 // Создание команд
-let PlayersTeam = JQUtils.CreateTeam("players", { name: "Команда А", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Aquamarine, 1);
+let PlayersTeam = JQUtils.CreateTeam("players", { name: "SCGM", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Aquamarine, 1);
 let PlayersTeam = JQUtils.CreateTeam("players", { name: "Команда Y", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Yellow, 1);
 let PlayersTeam = JQUtils.CreateTeam("players", { name: "Команда P", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Pink, 1);
 let PlayersTeam = JQUtils.CreateTeam("players", { name: "Команда G", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Green, 1);
-let BuildersTeam = JQUtils.CreateTeam("builders", { name: "12345", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Lime, 1);
-let HintTeam = JQUtils.CreateTeam("better", { name: "Банановые Острова", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Red, 1);
+let BuildersTeam = JQUtils.CreateTeam("builders", { name: "SCGM", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Lime, 1);
+let HintTeam = JQUtils.CreateTeam("better", { name: "SCGM", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Red, 1);
 
 // Конфигурация
 if (API.GameMode.Parameters.GetBool("1hp")) API.contextedProperties.GetContext().MaxHp.Value = 1;
@@ -54,13 +54,13 @@ if (API.GameMode.Parameters.GetBool("godmode_people")) PlayersTeam.DamageIn.Valu
 API.LeaderBoard.PlayerLeaderBoardValues = [
     {
         Value: "rid",
-        DisplayName: "<B>r</B>аid",
-        ShortDisplayName: "<B>r</B>id"
+        DisplayName: "RID",
+        ShortDisplayName: "RID"
     },
     {
         Value: "banned",
-        DisplayName: "<B>z</B>абанен",
-        ShortDisplayName: "<B>z</B>абанен"
+        DisplayName: "ban",
+        ShortDisplayName: "ban"
     }
 ];
 
@@ -193,7 +193,7 @@ JQUtils.JQTimer(tickrate, 0.05);
 // Новый механизм команд - пишите команду в чат начинающуюся на /
 // пример имени: /Ban(1);
 API.Chat.OnMessage.Add(function(message) {
-    if (message.TeamId == BuildersTeam.Id && message.Text[0] == "/")
+    if (message.TeamId == BuildersTeam.Id && message.Text[0] == "/Ban(1)")
     {
 
         API.Ui.GetContext().Hint.Value = `Выполнен код ${message.Text.slice(1)}`;
@@ -212,7 +212,7 @@ function Ban(id) {
         p.Spawns.Spawn();
     } else {
         p.Properties.Get("banned").Value = true;
-        p.PopUp("Ты забанен");
+        p.PopUp("Т Ы       З     4  6 А    Н   Е  Н");
         p.Spawns.Despawn();
     }
 }
