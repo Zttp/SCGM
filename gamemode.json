@@ -1,0 +1,40 @@
+{
+    "Name": "<B><color=#FF00FF>Better!</color> EDITOR <i>(API 2.0)</i></B>",
+    "Description": "<B>v1.1. Режим от just_qstn.</B>\nПродвинутый редактор карт добавляет систему хостов, зону выполнения кода и другое. <i>Туториал можно найти в телеграме: t.me/pixel_combats2 по хештегу #bettereditor</i>",
+    "StartClientVersion": 538,
+    "MapLists": [
+        {
+            "MapListId": 8401,
+            "Name": "Заготовки"
+        }
+    ],
+    "Parameters": {
+        "Bool": [
+            {
+                "Name": "gradient",
+                "DisplayName": "Градиент",
+                "Default": true
+            },
+            {
+                "Name": "1hp",
+                "DisplayName": "1ХП",
+                "Default": false
+            },
+            {
+                "Name": "10000hp",
+                "DisplayName": "10000ХП (для строителей). Нужно, если вы делаете паркур карту.",
+                "Default": false
+            },
+            {
+                "Name": "godmode_admin",
+                "DisplayName": "Бессмертие для строителей",
+                "Default": false
+            },
+            {
+                "Name": "godmode_people",
+                "DisplayName": "Бессмертие для обычных игроков",
+                "Default": false
+            },
+        ]
+    }
+}
