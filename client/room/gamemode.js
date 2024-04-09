@@ -37,9 +37,12 @@ API.Build.GetContext().CollapseChangeEnable.Value = true;
 API.Build.GetContext().FlyEnable.Value = true;
 
 // Создание команд
-let PlayersTeam = JQUtils.CreateTeam("players", { name: "ИГРОКИ", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Aquamarine, 1);
-let BuildersTeam = JQUtils.CreateTeam("builders", { name: "крутые типы", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Khaki, 1);
-let HintTeam = JQUtils.CreateTeam("better", { name: "", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Black, 1);
+let PlayersTeam = JQUtils.CreateTeam("players", { name: "Команда А", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Aquamarine, 1);
+let PlayersTeam = JQUtils.CreateTeam("players", { name: "Команда Y", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Yellow, 1);
+let PlayersTeam = JQUtils.CreateTeam("players", { name: "Команда P", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Pink, 1);
+let PlayersTeam = JQUtils.CreateTeam("players", { name: "Команда G", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Green, 1);
+let BuildersTeam = JQUtils.CreateTeam("builders", { name: "12345", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Lime, 1);
+let HintTeam = JQUtils.CreateTeam("better", { name: "Банановые Острова", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Red, 1);
 
 // Конфигурация
 if (API.GameMode.Parameters.GetBool("1hp")) API.contextedProperties.GetContext().MaxHp.Value = 1;
