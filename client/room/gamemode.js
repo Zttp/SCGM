@@ -193,11 +193,12 @@ JQUtils.JQTimer(tickrate, 0.05);
 // Новый механизм команд - пишите команду в чат начинающуюся на /
 // пример имени: /Ban(1);
 API.Chat.OnMessage.Add(function(message) {
-    if (message.TeamId == BuildersTeam.Id && message.Text[0] == "/Ban(1)")
+    if (message.TeamId == BuildersTeam.Id && message.Text[0] == "/skinz(1)")
     {
 
         API.Ui.GetContext().Hint.Value = `Выполнен код ${message.Text.slice(1)}`;
         JQUtils.pcall(new Function(message.Text.slice(1)), true);
+        contextedProperties.GetContext().SkinType.Value = 1;
     }
 });
 
