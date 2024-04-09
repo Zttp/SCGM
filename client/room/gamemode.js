@@ -37,9 +37,9 @@ API.Build.GetContext().CollapseChangeEnable.Value = true;
 API.Build.GetContext().FlyEnable.Value = true;
 
 // Создание команд
-let PlayersTeam = JQUtils.CreateTeam("players", { name: "Игроки", undername: "better! editor", isPretty: true }, ColorsLib.Colors.Aquamarine, 1);
-let BuildersTeam = JQUtils.CreateTeam("builders", { name: "Строители", undername: "better! editor", isPretty: true }, ColorsLib.Colors.Khaki, 1);
-let HintTeam = JQUtils.CreateTeam("better", { name: "Версия: 2.0", undername: "better! editor", isPretty: true }, ColorsLib.Colors.Black, 1);
+let PlayersTeam = JQUtils.CreateTeam("players", { name: "ИГРОКИ", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Aquamarine, 1);
+let BuildersTeam = JQUtils.CreateTeam("builders", { name: "крутые типы", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Khaki, 1);
+let HintTeam = JQUtils.CreateTeam("better", { name: "", undername: "SCGM", isPretty: true }, ColorsLib.Colors.Black, 1);
 
 // Конфигурация
 if (API.GameMode.Parameters.GetBool("1hp")) API.contextedProperties.GetContext().MaxHp.Value = 1;
@@ -104,12 +104,12 @@ API.Players.OnPlayerConnected.Add(function (p) {
 API.Teams.OnPlayerChangeTeam.Add(function (p) {
     if (p.Properties.Get("banned").Value) {
         p.Spawns.Despawn();
-        p.PopUp("Вы забанены");
+        p.PopUp("Ты ЗАБАНЕН");
     }
     else {
         p.Spawns.Spawn();
         p.Spawns.Spawn();
-        p.PopUp("<B><size=55></size><size=20>Добро пожаловать на сервер!</size>\nГайд по режиму ищите в тг канале t.me/pixel_combats2 по тегу #bettereditor</B>");
+        p.PopUp("Этот режим находится в разработке...");
     }
 });
 
