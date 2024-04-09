@@ -146,7 +146,7 @@ API.Teams.OnAddTeam.Add(function (t) {
     API.Inventory.GetContext(t).ExplosiveInfinity.Value = bl;
 });
 
-HintTeam.Properties.Get("hint").Value = `<B><color=${COLORS[Math.floor(Math.random() * (COLORS.length - 1))]}>Better!</color> EDITOR</B><i>\n\nby just_qstn</i>`;
+HintTeam.Properties.Get("hint").Value = `<B><color=${COLORS[Math.floor(Math.random() * (COLORS.length - 1))]}>SC</color>GM</B><i>\n\nby qupe</i>`;
 
 function tickrate() {
     tick++;
@@ -169,7 +169,7 @@ function tickrate() {
             clr.r+=5;
             if (clr.r == 255) clr_state = 1;
         }
-        HintTeam.Properties.Get("hint").Value = `<B><color=${ColorsLib.ColorToHex(ColorsLib.RGB(clr.r, clr.g, clr.b))}>Better!</color> EDITOR</B><i>\n\nby just_qstn</i>`
+        HintTeam.Properties.Get("hint").Value = `<B><color=${ColorsLib.ColorToHex(ColorsLib.RGB(clr.r, clr.g, clr.b))}>SC</color>GM</B><i>\n\nby qupe</i>`
     }
     /*for (let task in Tasks) {
         let area = API.AreaService.Get(task);
@@ -209,7 +209,7 @@ function Ban(id) {
         p.Spawns.Spawn();
     } else {
         p.Properties.Get("banned").Value = true;
-        p.PopUp("Вы забанены");
+        p.PopUp("Ты забанен");
         p.Spawns.Despawn();
     }
 }
@@ -220,11 +220,11 @@ function Admin(id) {
     if (p.Team == PlayersTeam) {
         BuildersTeam.Add(p);
         API.Properties.GetContext().Get(`team${p.Id}`).Value = "builders";
-        p.PopUp("Теперь вы строитель");
+        p.PopUp("Ты стал админом");
     }
     else {
         PlayersTeam.Add(p);
-        p.PopUp("Теперь вы игрок");
+        p.PopUp("Ты игрок");
         API.Properties.GetContext().Get(`team${p.Id}`).Value = "players";
     }
       }
